@@ -14,7 +14,7 @@ We have a db.json that is being used as a basic db for our use-case
 
 ## Launch the server
 
-npm run start server
+npm run start-server
 
 ## Launch the web client
 
