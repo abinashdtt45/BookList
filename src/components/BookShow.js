@@ -4,7 +4,7 @@ import BookEdit from "./BookEdit";
 
 const BookShow = ({ book }) => {
   const [edit, setEdit] = useState(false);
-  const { updateBook, deleteBook } = useContext(BookContext);
+  const { deleteBook } = useContext(BookContext);
 
   const getContent = () => {
     return edit ? (
@@ -14,8 +14,7 @@ const BookShow = ({ book }) => {
     );
   };
 
-  const handleSumbit = (id, title) => {
-    updateBook(id, title);
+  const handleSumbit = () => {
     setEdit(!edit);
   };
 
