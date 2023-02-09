@@ -4,7 +4,7 @@ import BookList from "./components/BookList";
 import BookContext from "./context/bookContext";
 
 const App = () => {
-  const { books, onCreate, fetchBook } = useContext(BookContext);
+  const { fetchBook } = useContext(BookContext);
 
   useEffect(() => {
     fetchBook();
@@ -13,8 +13,8 @@ const App = () => {
   return (
     <div className="app">
       <h1>Reading List</h1>
-      <BookList books={books} />
-      <BookCreate onCreate={onCreate} />
+      <BookList />
+      <BookCreate />
     </div>
   );
 };
