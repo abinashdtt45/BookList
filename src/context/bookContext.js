@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useCallback, useState } from "react";
 import {
   addBook,
   deleteBookById,
@@ -11,9 +11,13 @@ const BookContext = createContext();
 const Provider = ({ children }) => {
   const [books, setBooks] = useState([]);
 
-  const fetchBook = async () => {
+  // const fetchBook = async () => {
+  //   setBooks(await getBook());
+  // };
+
+  const fetchBook = useCallback(async () => {
     setBooks(await getBook());
-  };
+  }, []);
 
   const createBook = async (title) => {
     const newBook = await addBook(title);
